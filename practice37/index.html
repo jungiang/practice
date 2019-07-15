@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function alternate_caps(string){
+            var capped_string = '';
+            for(var i = 0; i < string.length; i++){
+                if(i%2 === 1){
+                    capped_string+=string[i].toUpperCase();
+                }else{
+                    capped_string+=string[i];
+                }
+                
+            }
+            return capped_string;
+        }
+
+        console.log(alternate_caps('amazing'));
+
+        // with spaces accounted for
+        function alternate_caps_space(string){
+            var capped_string = '';
+            var space_count = 0;
+            for(var i = 0; i < string.length; i++){
+                if(string[i] === ' '){
+                    space_count++;
+                    capped_string+=string[i];
+                }else if((i+space_count)%2 === 1){
+                    capped_string+=string[i].toUpperCase();
+                }else{
+                    capped_string+=string[i];
+                }
+                
+            }
+            return capped_string;
+        }
+
+        console.log(alternate_caps_space('amazing'));
+        console.log(alternate_caps_space('this is really amazing work'));
+
+        // with puntuations and variations accounted for
+        function alternate_caps_punctuation(string){
+            var capped_string = '';
+            var capitalize = true;
+            for(var i = 0; i < string.length; i++){
+                if(capitalize && string[i].charCodeAt() > 96 && string[i].charCodeAt() < 123){//all lower cases
+                    capitalize = false;
+                    capped_string+=string[i].toUpperCase();
+                }else if(string[i].charCodeAt() > 64 && string[i].charCodeAt() < 91){//all upper cases
+                    capitalize = false;
+                    capped_string+=string[i];
+                }else if(!(string[i].charCodeAt() > 96 && string[i].charCodeAt() < 123) && !(string[i].charCodeAt() > 64 && string[i].charCodeAt() < 91)){
+                    capped_string+=string[i];
+                }else{
+                    capitalize = true;
+                    capped_string+=string[i];
+                }
+                
+            }
+            return capped_string;
+        }
+
+        console.log(alternate_caps_punctuation('amazing'));
+        console.log(alternate_caps_punctuation('This is really amazing work'));
+        console.log(alternate_caps_punctuation('this is really amazing work, but let us try a harder example. Shout! Really...'));
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

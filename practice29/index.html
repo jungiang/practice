@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script>
+    function do_math(num1, num2, op){
+        switch(op){
+            case '+': 
+                return num1 + num2;
+            case '-':
+                return num1 - num2;
+            case 'x':
+            case 'X': 
+            case '*': 
+                return num1*num2;
+            case '/': 
+                return num1/num2;
+            default:
+                return 'ERROR';
+        }
+    }
+
+    console.log(do_math(2, 2, '+'));
+    console.log(do_math(2, 2, '-'));
+    console.log(do_math(2, 2, '*'));
+    console.log(do_math(2, 2, '/'));
+    console.log(do_math(2, 2, 'test'));
+
+    function do_math_obj(num1, num2, op){
+        var do_math2 = {
+            '+': num1 + num2,
+            '-': num1 - num2,
+            '*': num1 * num2,
+            '/': num1 / num2
+        }
+        return do_math2[op];
+    }
+
+    console.log(do_math_obj(3, 2, '+'));
+    console.log(do_math_obj(3, 2, '-'));
+    console.log(do_math_obj(3, 2, '*'));
+    console.log(do_math_obj(3, 2, '/'));
+
+</script>
+<body>
+    
+</body>
+</html>

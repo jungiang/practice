@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function find_vowels(string){
+            var vowel_string = '';
+            for(var i = 0; i < string.length; i++){
+                switch(string[i]){
+                    case 'a': 
+                        vowel_string += 'a';
+                        break;
+                    case 'e': 
+                        vowel_string += 'e';
+                        break;
+                    case 'i': 
+                        vowel_string += 'i';
+                        break;
+                    case 'o': 
+                        vowel_string += 'o';
+                        break;
+                    case 'u': 
+                        vowel_string += 'u';
+                        break;
+                }
+            }
+            return vowel_string;
+        }
+
+        console.log(find_vowels("four score and seven years ago"));
+
+        var vowels = {
+            a: 'a',
+            e: 'e',
+            i: 'i',
+            o: 'o',
+            u: 'u'
+        }
+        function find_vowels_obj(string){
+            var vowel_string = '';
+            for(var i = 0; i < string.length; i++){
+                if(vowels[string[i]]){
+                    vowel_string+=vowels[string[i]];
+                }
+            }
+            return vowel_string;
+        }
+
+        console.log(find_vowels_obj("four score and seven years ago"));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
