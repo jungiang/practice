@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sort</title>
+    <script>
+        function sort_alphabetical(array){
+            return array.sort();
+        }
+
+        console.log(sort_alphabetical(['mouse', 'cat', 'dog', 'human']));
+
+        function sort_alphabetical_bubble(array){
+            do{
+                var changes_made = 0;
+                for(var i = 0; i < array.length - 1; i++){
+                    if(array[i] > array[i+1]){
+                        var word_swap = array[i];
+                        array[i] = array[i+1];
+                        array[i+1] = word_swap;
+                        changes_made++;
+                    }
+                }
+            }while(changes_made);
+            return array;
+        }
+
+        console.log(sort_alphabetical_bubble(['mouse', 'cat', 'dog', 'human']));
+        console.log(sort_alphabetical_bubble(['mouse', 'cat', 'dog', 'rabbit', 'human', 'bee']));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
