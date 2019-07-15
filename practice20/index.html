@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Randomize Array</title>
+    <script>
+        function randomize_list(array){
+            var randomized_array = [];
+            while(array.length){
+                var random_pick = Math.floor(Math.random()*array.length);
+                randomized_array.push(array.splice(random_pick, 1)[0]);
+            }
+            return randomized_array;
+        }
+
+        console.log(randomize_list([1, 2, 3, 4, 5, 6, 7, 8, 9]));
+        console.log(randomize_list(['this', 'will', 'be', 'a', 'string', 'array']));
+
+        function randomize_list_no_array_methods(array){
+            var randomized_array = [];
+            var pseudo_array_size = array.length;
+            var new_array_order = 0;
+            while(pseudo_array_size){
+                var random_pick = Math.floor(Math.random()*pseudo_array_size);
+                randomized_array[new_array_order] = array[random_pick];
+                new_array_order++;
+                array[random_pick] = array[pseudo_array_size-1];
+                pseudo_array_size--;
+            }
+            return randomized_array;
+        }
+
+        console.log(randomize_list_no_array_methods([1, 2, 3, 4, 5, 6, 7, 8, 9]));
+        console.log(randomize_list_no_array_methods(['this', 'will', 'be', 'a', 'string', 'array']));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
