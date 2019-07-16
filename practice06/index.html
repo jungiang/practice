@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Numeric Spirals</title>
+    <script>
+        function numeric_spirals(num){
+            var fibonacci_array = [0, 1];
+            var num1 = 0;
+            while(num-2){
+                var num2 = num1 + 1;
+                fibonacci_array.push(fibonacci_array[num1] + fibonacci_array[num2]);
+                num--;
+                num1++;
+            }
+            return fibonacci_array.join(' ');
+        }
+
+        console.log(numeric_spirals(12));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

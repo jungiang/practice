@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Math Computation Sequences</title>
+    <script>
+        function math_computation_sequences(num1, num2){
+            var do_math = {
+            add: num1 + num2,
+            sub: num1 - num2,
+            mult: num1 * num2,
+            div: num1 / num2
+            }
+
+            return sequence_array = [
+                `${num1}+${num2}=${do_math.add}`,
+                `${num1}-${num2}=${do_math.sub}`,
+                `${num1}*${num2}=${do_math.mult}`,            
+                `${num1}/${num2}=${do_math.div}`,                        
+            ];
+        }
+
+        console.log(math_computation_sequences(2, 5));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

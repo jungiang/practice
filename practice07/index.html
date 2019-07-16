@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Igpay Atinlay</title>
+    <script>
+        function pig_latin(string){
+            var string_split = string.split(' ');
+            for(var i = 0; i < string_split.length; i++){
+                if(string_split[i][0] === string_split[i][0].toUpperCase()){
+                    string_split[i] = string_split[i][0] + string_split[i][1].toUpperCase() + string_split[i].slice(2);
+                }
+                string_split[i] = string_split[i] + string_split[i][0].toLowerCase() + 'ay';
+                string_split[i] = string_split[i].slice(1);
+            }
+            return string_split.join(' ');
+        }
+        
+        console.log(pig_latin('Hello my name is Stu'));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

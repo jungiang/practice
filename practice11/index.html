@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Even Odds</title>
+    <script>
+        function even_odd(array){
+            var odd_array = [];
+            var even_array = [];
+            for(var i = 0; i < array.length; i++){
+                if(array[i]%2 === 0){//can't do bang falsey because of NaN for outliers
+                    even_array.push(array[i]);
+                }else if(array[i]%2 === 1){
+                    odd_array.push(array[i]);
+                }
+            }
+            return {
+                odd: odd_array,
+                even: even_array
+            };
+        }
+
+        console.log(even_odd([2,5,1,6,8,2,20,'cat',13,3]));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
