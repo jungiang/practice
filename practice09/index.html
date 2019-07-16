@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fitting Words</title>
+    <script>
+        function fitting_words(string, array){
+            var fitting_words_array = [];
+            for(var i = 0; i < array.length; i++){//array loop
+                var letters_found = true;
+                for(var j = 0; j < string.length && letters_found; j++){//string loop
+                    for(var k = 0; k < array[i].length; k++){//string in array loop
+                        if(string[j] === array[i][k]){
+                            break;//stop the k loop if match is found
+                        }else if(k === array[i].length-1){
+                            letters_found = false;//determine if word should be added or not; if full loop goes through and letter is not found change this to false, will reset on next word in array
+                        }
+                    }
+                }
+                if(letters_found){
+                    fitting_words_array.push(array[i]);
+                }
+            }
+            return fitting_words_array;
+        }
+
+        console.log(fitting_words('cat', ['cat','caterpillar','whale','accurate','smile','cactus','cute']));
+        console.log(fitting_words('u', ['cat','caterpillar','whale','accurate','smile','cactus','cute']));
+        console.log(fitting_words('pill', ['cat','caterpillar','whale','accurate','smile','cactus','cute']));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
