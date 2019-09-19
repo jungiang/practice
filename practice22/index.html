@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sort by Field</title>
+    <script src="answer.js"></script>
+    <script>
+        var input1 = [
+            {
+                name: 'John',
+                age: 42,
+                gender: 'M'
+            },
+            {
+                name: 'Jack',
+                age: 34,
+                gender: 'M'
+            },
+            {
+                name: 'Michael',
+                age: 40,
+                gender: 'M'
+            },
+            {
+                name: 'Kendra',
+                age: 48,
+                gender: 'F'
+            }
+        ]
+
+        output = sort_object_list_by_field(input1, 'age');
+        console.log(output);
+
+        var input2 = [
+            {
+                name: 'Kendra',
+                age: 48,
+                gender: 'F'
+            },
+            {
+                name: 'John',
+                age: 42,
+                gender: 'M'
+            },
+            {
+                name: 'Jack',
+                age: 34,
+                gender: 'M'
+            },
+            {
+                name: 'Michael',
+                age: 40,
+                gender: 'M'
+            }
+        ]
+
+        output = sort_object_list_by_field(input2, 'age');
+        console.log(output);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
