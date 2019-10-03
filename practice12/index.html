@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Math Sequence</title>
+    <script>
+        function math_sequence(num){
+            var output = [];
+            for(var i = num*2; i < num+38; i+=2){
+                if(i > num*10){
+                    output.push(i/4);
+                }else{
+                    output.push(i);
+                }
+            }
+            return output;
+        }
+
+        console.log(math_sequence(2));
+        console.log(math_sequence(5));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

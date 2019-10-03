@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Char Convert</title>
+    <script>
+        function character_convert(string){
+            var i = 0;
+            var output = '';
+            while(i < string.length){
+                output += string.charCodeAt(i);
+                i++;
+            }
+            return output;
+        }
+
+        var input = 'the cat in the hat';
+        console.log(character_convert(input));
+
+        function character_convert_repeat_values(string){
+            var string_array = string.split("");
+            for(var i = 0; i < string_array.length; i++){
+                if(!Number.isInteger(string_array[i])){
+                    var encountered_value = string_array[i];
+                    var converted_char = string_array[i].charCodeAt(0);
+                    for(var j = i; j < string_array.length; j++){
+                        if(string_array[j] === encountered_value){
+                            string_array[j] = converted_char;
+                        }
+                    } 
+                }
+            }
+            return string_array.join("");
+        }
+
+        console.log(character_convert_repeat_values(input));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
