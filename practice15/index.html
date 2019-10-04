@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Numberic Toggles</title>
+    <script>
+        function numberic_toggles(num){
+            var output = [];
+            var current_num = num;
+            for(var i = num; i < num+4; i++){
+                for(var j = 0; j < 2; j++){
+                    if(i%2 === 0){
+                        output.push(current_num+=i);
+                    }else{
+                        output.push((current_num+=i)*-1);
+                    }
+                    
+                }
+            }
+            return output;
+        }
+
+        console.log(numberic_toggles(2));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
