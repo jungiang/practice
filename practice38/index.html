@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Phone Number Conversion</title>
+    <script>
+        var num_references = {
+            '2': ['abc'],
+            '3': ['def'],
+            '4': ['ghi'],
+            '5': ['jkl'],
+            '6': ['mno'],
+            '7': ['pqrs'],
+            '8': ['tuv'],
+            '9': ['wxyz']           
+        }
+
+        function reverse_t9(keys){
+            var output = '';
+            var ref_position = 0;
+            for(var i = 0; i < keys.length; i++){
+                if(keys[i+1] === keys[i]){
+                    ref_position++;
+                }else{
+                    output+=num_references[keys[i]][0][ref_position];
+                    ref_position = 0;
+                    if(keys[i+1] === ' '){
+                        i++;
+                    }
+                }
+            }
+            return output;
+        }
+
+        console.log(reverse_t9('44 444 44666 9 277733 99966688'));
+        console.log(reverse_t9('222 28'));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

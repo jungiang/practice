@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Array Factors</title>
+    <script>
+        function array_factors(array){
+            var output = {};
+            for(var i = 0; i < array.length; i++){
+                output[array[i]] = [];
+                for(var j = 0; j < array.length; j++){
+                    if(array[i]/array[j] > 1 && Number.isInteger(array[i]/array[j])){
+                        output[array[i]].push(array[j]);
+                    }
+                }
+            }
+            return output;
+        }
+
+        var input = [4,2,8,6,3,9];
+        console.log(array_factors(input));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
