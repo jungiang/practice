@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Roman Numberals</title>
+    <script>
+        function roman_numberals(num){
+            var output = '';
+            while(num > 0){
+                if(num/1000 >= 4){
+                    return "Error: Number is greater than 4000!"
+                }else if(num/1000 >= 1){
+                    for(var i = 0; i < parseInt(num/1000); i++){
+                        num-=1000;
+                        output+='M';
+                    }
+                }else if(num/100 >= 9){
+                    num-=900;
+                    output+='CM';
+                }else if(num/500 >= 1){
+                    num-=500;
+                    output+='D';
+                }else if(num/100 >= 4){
+                    num-=400;
+                    output+='CD';
+                }else if(num/100 >= 1){
+                    for(var i = 0; i < parseInt(num/100); i++){
+                        num-=100;
+                        output+='C'; 
+                    }
+                }else if(num/10 >= 9){
+                    num-=90;
+                    output+='XC';
+                }else if(num/50 >= 1){
+                    num-=50;
+                    output+='L';
+                }else if(num/10 >= 4){
+                    num-=40;
+                    output+='XL';
+                }else if(num/10 >= 1){
+                    for(var i = 0; i < parseInt(num/10); i++){
+                        num-=10;
+                        output+='X'; 
+                    }
+                }else if(num >= 9){
+                    num-=9;
+                    output+='IX';
+                }else if(num/5 >= 1){
+                    num-=5;
+                    output+='V';
+                }else if(num >= 4){
+                    num-=4;
+                    output+='IV';
+                }else if(num >= 1){
+                    for(var i = 0; i < num; i++){
+                        num-=1;
+                        output+='I';  
+                    }
+                }
+            }
+            return output;
+        }
+
+        console.log(roman_numberals(62));//LXII
+        console.log(roman_numberals(444));//CDXLIV
+        console.log(roman_numberals(3334));//MMMCCCXXXIV
+        console.log(roman_numberals(91));//XCI
+        console.log(roman_numberals(598));//DXCVIII
+        console.log(roman_numberals(9538));//error
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
