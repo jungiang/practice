@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Permutations</title>
+    <script>
+        function permuations(string){
+            var output = [];
+            recursive_loop('', string, output);
+            return output;
+        }
+
+        function recursive_loop(letters, remainder, output){
+            for(var i = 0; i < remainder.length && remainder.length !== 1; i++){
+                var new_letter = remainder.substr(i, 1);
+                var new_base = letters + new_letter;
+                var new_remainder = remainder.replace(remainder[i], '');
+                recursive_loop(new_base, new_remainder, output);
+            }
+            if(i !== remainder.length){
+               output.push(letters + remainder); 
+            }
+        }
+
+        console.log(permuations('abc'));
+        console.log(permuations('abcd'));
+        console.log(permuations('abcde'));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
